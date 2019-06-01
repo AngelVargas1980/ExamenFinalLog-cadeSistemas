@@ -52,10 +52,10 @@ class Desk:
 
         
         #Creamos un boton para ejecutar las operaciones       
-        Button (frame, text = 'Respuesta 1', command = self.dividir).grid(row = 6, columnspan = 5, sticky = W + E)
+        Button (frame, text = 'Respuesta 1', command = self.funcion1).grid(row = 6, columnspan = 5, sticky = W + E)
 
          #Creamos un segundo boton para ejecutar las operaciones       
-        Button (frame, text = 'Respuesta 2', command = self.dividir).grid(row = 7, columnspan = 5, sticky = W + E)
+        Button (frame, text = 'Respuesta 2', command = self.funcion2).grid(row = 7, columnspan = 5, sticky = W + E)
     
         #designamos un área para mensajes
         self.message = Label(text = '', fg = 'red')
@@ -66,7 +66,7 @@ class Desk:
    
     # esta es la función que ejecuta la operación
    
-    def dividir(self):
+    def funcion1(self):
             
            #def dividir(self):
                        
@@ -74,37 +74,39 @@ class Desk:
             y=float(self.var2.get())
             z=float(self.var3.get())
 
-            
+            if x < y:
+                resultado=x*y*z
+                self.message['text'] = 'se multiplicaron los valores el resultado es: {}'.format(resultado)
+         
+            if x == z:
+                resultado=x+y+z
+                self.message['text'] = 'se sumaron los valores el resultado es: {}'.format(resultado)
 
-            if  x<z:
-                resultado=float(x)*float(y)*float(z)
-                r1=resultado
-                if x<=z:
-                    self.message['text'] = 'La multiplicación de los 3:  {} datos '.format(resultado)
-                    if r1==1:
-                        self.message['text'] = 'ya paso un año '
-                elif y>x:
-                    resultado=float(y)-float(x)
-                    if resultado !=1:
-                        self.message['text'] = 'faltan {} años '.format(resultado) 
-                    else:
-                     self.message['text'] = 'falta  un año'  
+            if  y==0 and x > z:
+                 resultado=z-x
+                 self.message['text'] = 'se resto el tercero menos el primero resultado es: {}'.format(resultado)
+            elif y==0 and z > x:
+                resultado=x-z
+                self.message['text'] = 'se resto  el primero menos el tercero resultado es: {}'.format(resultado)  
         
-    #def multiplicar(self):   
+    def funcion2(self):   
 
-            #if  x<z:
-                #resultado=float(x)*float(z)*float(z)
-                #r1=resultado
-                #if r1 !=1:
-                    #self.message['text'] = 'La multiplicación de los 3:  {} datos '.format(resultado)
-                    #if r1==1:
-                        #self.message['text'] = 'ya paso un año '
-                #elif y>x:
-                    #resultado=float(y)-float(x)
-                    #if resultado !=1:
-                        #self.message['text'] = 'faltan {} años '.format(resultado) 
-                    #else:
-                     #self.message['text'] = 'falta  un año' 
+        x=str(self.var1.get())
+        y=str(self.var2.get())
+        z=str(self.var3.get())
+
+        x1=float(self.var1.get())
+        y1=float(self.var2.get())
+        z1=float(self.var3.get())
+        r1=x,y,z
+        self.message['text'] = 'el mesaje  es: {}'.format(r1)
+        resultado=x1+(y1*z1)
+        i=0
+        while i != resultado :
+            self.message['text'] = '{}'.format(r1)
+            i=i+1
+
+
 
 
     
