@@ -52,10 +52,10 @@ class Desk:
 
         
         #Creamos un boton para ejecutar las operaciones       
-        Button (frame, text = 'Respuesta 1', command = self.data).grid(row = 6, columnspan = 5, sticky = W + E)
+        Button (frame, text = 'Respuesta 1', command = self.dividir).grid(row = 6, columnspan = 5, sticky = W + E)
 
          #Creamos un segundo boton para ejecutar las operaciones       
-        Button (frame, text = 'Respuesta 2', command = self.data).grid(row = 7, columnspan = 5, sticky = W + E)
+        Button (frame, text = 'Respuesta 2', command = self.dividir).grid(row = 7, columnspan = 5, sticky = W + E)
     
         #designamos un área para mensajes
         self.message = Label(text = '', fg = 'red')
@@ -64,51 +64,49 @@ class Desk:
     # creamos una función para validar que los campos no esten en blanco
     
    
-    # esta es la función que ejecuta la división
+    # esta es la función que ejecuta la operación
    
-    def data(self):
+    def dividir(self):
             
-           def dividir(self):
-            
-           
-            
+           #def dividir(self):
+                       
             x=float(self.var1.get())
             y=float(self.var2.get())
             z=float(self.var3.get())
 
-            # esta es la función que ejecuta la operación
-            def dividir(self):
+            
+
+            if  x<z:
+                resultado=float(x)*float(y)*float(z)
+                r1=resultado
                 if x<=z:
-                    resultado = float( self.var1.get() ) * float( self.var2.get() ) * float(self.var3.get())
-                    self.message['text'] = 'Se multiplicaron los 3 valores: {}'.format(dividir)
-            
-                else:
-                    self.message['text'] = 'El segundo numero es mayor : {}'.format(dividir)
-
-
-
-            #self.message['text'] = 'Son iguales'
-                  
-
-
-            #elif  x>y:
-                #self.message['text'] = 'El segundo numero es mayor : {}'.format(x)
-            #else:                               
-                #self.message['text'] = 'El primer numero es mayor : {}'.format(y)
-
-            
-                
-
-            #if  resultado==0:
-                 #self.message['text'] = 'Es exacto el resultado es : {}'.format(divi)
-            #else:                               
-                #self.message['text'] = 'No es exacto el resultado es : {}'.format(divi)
-
-        #nombre = input ('Ingrese el nombre:')
-        #edad = int(input('Ingrese la edad:'))
-        #estatura = float(input('Ingrese la estatura:'))
+                    self.message['text'] = 'La multiplicación de los 3:  {} datos '.format(resultado)
+                    if r1==1:
+                        self.message['text'] = 'ya paso un año '
+                elif y>x:
+                    resultado=float(y)-float(x)
+                    if resultado !=1:
+                        self.message['text'] = 'faltan {} años '.format(resultado) 
+                    else:
+                     self.message['text'] = 'falta  un año'  
         
-    
+    #def multiplicar(self):   
+
+            #if  x<z:
+                #resultado=float(x)*float(z)*float(z)
+                #r1=resultado
+                #if r1 !=1:
+                    #self.message['text'] = 'La multiplicación de los 3:  {} datos '.format(resultado)
+                    #if r1==1:
+                        #self.message['text'] = 'ya paso un año '
+                #elif y>x:
+                    #resultado=float(y)-float(x)
+                    #if resultado !=1:
+                        #self.message['text'] = 'faltan {} años '.format(resultado) 
+                    #else:
+                     #self.message['text'] = 'falta  un año' 
+
+
     
 #validamos si estamos en la aplicación inicial
 if __name__ == '__main__':
